@@ -46,7 +46,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-DJANGO_APPS = (
+DJANGO_APPS = [
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -54,11 +54,14 @@ DJANGO_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-)
+]
 
-LOCAL_APPS = ()
+LOCAL_APPS = [
+    'applications.users',
+    'applications.home',
+]
 
-THIRD_PARTY_APPS = ()
+THIRD_PARTY_APPS = []
 
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
@@ -132,6 +135,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+
+#INDicamos que el proyecto va trabajar con otra base de usuarios
+
+AUTH_USER_MODEL = 'users.User'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
